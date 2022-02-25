@@ -1,0 +1,8 @@
+if else 语句：
+{%- if username == "ximeng" -%}
+    hello, this is if.
+{%- elsif username == "flier" -%}
+    hello, this is else if.
+{%- else username == "flier" -%}
+    hello, this is else.
+{%- endif -%}

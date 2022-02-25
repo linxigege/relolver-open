@@ -1,0 +1,6 @@
+for循环：
+{%- for user in users -%}
+    {%- if user.name != "flier0" -%}
+        {{user.name}}
+    {%- endif -%}
+{%- endfor -%}

@@ -1,0 +1,4 @@
+对象迭代：
+{%- iter key,value in object -%}
+{{key}}={{value}}
+{%- enditer -%}

@@ -1,0 +1,2 @@
+直接渲染：
+{{username}}:{{password}}

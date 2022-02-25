@@ -1,0 +1,6 @@
+if嵌套for：
+{%- if username == "flier" -%}
+    {%- for user in users -%}
+        {{user.name}}
+    {%- endfor -%}
+{%- endif -%}

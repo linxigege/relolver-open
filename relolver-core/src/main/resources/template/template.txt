@@ -1,0 +1,44 @@
+直接渲染：
+{{username}}:{{password}}
+
+
+对象迭代：
+{%- for key in object.keySet() -%}
+{{key}}={{value}}
+{%- endfor -%}
+
+
+加上判断语句：
+{%- if username == "ximeng" -%}
+    hello, this is if
+{%- endif -%}
+
+
+if else 语句：
+{%- if username == "ximeng" -%}
+    hello, this is if.
+{%- elsif username == "flier" -%}
+    hello, this is else if.
+{%- else username == "flier" -%}
+    hello, this is else.
+{%- endif -%}
+
+
+if嵌套for：
+{%- if username == "flier" -%}
+    {%- for user in users -%}
+        {{user.name}}
+    {%- endfor -%}
+{%- endif -%}
+
+
+原生的：包含的内容不会进行解析
+{% raw %}
+    {{username}}:{{password}}
+
+    {%- if username == "flier" -%}
+        {%- for user in users -%}
+            {{user.name}}
+        {%- endfor -%}
+    {%- endif -%}
+{% endraw %}

@@ -1,0 +1,10 @@
+原生的：包含的内容不会进行解析
+{% raw %}
+    {{username}}:{{password}}
+
+    {%- if username == "flier" -%}
+        {%- for user in users -%}
+            {{user.name}}
+        {%- endfor -%}
+    {%- endif -%}
+{% endraw %}
