@@ -17,7 +17,7 @@ public class RightCutMethodTest {
 
     @Test
     public void test1() {
-        String templateString = "{% assign code_file = \"/crashdumps/collect\" %}{{ code_file | right_cut: \"/\" }}";
+        String templateString = "{% assign code_file = \"//collect\" %}{{ code_file | right_cut: \"/\" }}";
         Configuration configuration = new Configuration(new StringTemplateResourceLoader());
         TemplateResolver builder = new TemplateResolver(configuration);
         Template template = builder.resolve(templateString);
@@ -26,7 +26,7 @@ public class RightCutMethodTest {
 
     @Test
     public void test2() {
-        String templateString = "{% assign content = \"http:///dumps/crashdumps/collect\" | right_cut: \"/\" %}{{ content }}";
+        String templateString = "{% assign content = \"http://///collect\" | right_cut: \"/\" %}{{ content }}";
         Configuration configuration = new Configuration(new StringTemplateResourceLoader());
         TemplateResolver builder = new TemplateResolver(configuration);
         Template template = builder.resolve(templateString);
