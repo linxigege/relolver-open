@@ -22,7 +22,7 @@ public abstract class ProcessBlock implements Block {
     protected String tag;
     protected String endTag;
     protected String topMark;
-    protected List<Block> childBlocks = new ArrayList<Block>();
+    protected List<Block> childBlocks = new ArrayList<>();
     protected Context context;
     protected boolean flag = true;
     private boolean deleteBlank = false;
@@ -47,12 +47,12 @@ public abstract class ProcessBlock implements Block {
         }
     }
 
-    protected List<Result> childsResult(boolean iftrue) {
+    protected List<Result> childResult(boolean ifTrue) {
         return childBlocks.stream().map(child -> {
             if (child instanceof ElsIFProcessBlock || child instanceof ElseProcessBlock) {
-                return child.setFlag(!iftrue).render();
+                return child.setFlag(!ifTrue).render();
             } else {
-                return child.setFlag(iftrue).render();
+                return child.setFlag(ifTrue).render();
             }
         }).collect(Collectors.toList());
     }

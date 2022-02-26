@@ -76,7 +76,7 @@ public class Configuration {
         this.context.bindMethod(Constants.DATE, new DateMethod());
         this.context.bindMethod(Constants.DEFAULT, new DefaultMethod());
         this.context.bindMethod(Constants.TIMES, new TimesMethod());
-        this.context.bindMethod(Constants.UP_CASE, new UpcaseMethod());
+        this.context.bindMethod(Constants.UP_CASE, new UpCaseMethod());
         this.context.bindMethod(Constants.URL_ENCODE, new UrlEncodeMethod());
         this.context.bindMethod(Constants.URL_DECODE, new UrlDecodeMethod());
         this.context.bindMethod(Constants.UNIQ, new UniqMethod());
@@ -90,6 +90,9 @@ public class Configuration {
         this.context.bindMethod(Constants.RELATIVE_URL, new RelativeUrlMethod());
         this.context.bindMethod(Constants.TRIM, new TrimMethod());
         this.context.bindMethod(Constants.RIGHT_CUT, new RightCutMethod());
+        this.context.bindMethod(Constants.FILL_BLANK, new FillBlankMethod());
+        this.context.bindMethod(Constants.ADD, new AddMethod());
+        this.context.bindMethod(Constants.OX_ADD, new OxToBigDecimalMethod());
     }
 
     public Context getContext() {

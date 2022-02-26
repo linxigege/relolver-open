@@ -15,7 +15,7 @@ public class ElseProcessBlock extends ProcessBlock {
     @Override
     public Result render() {
         StringBuilder resultString = new StringBuilder();
-        super.childsResult(flag).stream().forEach(child -> {
+        super.childResult(flag).stream().forEach(child -> {
             resultString.append(child.getResult().toString());
         });
         return new StringResult(resultString.toString());

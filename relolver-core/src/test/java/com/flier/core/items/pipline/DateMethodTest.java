@@ -10,11 +10,12 @@ public class DateMethodTest {
 
     @Test
     public void test1() {
-        String templateString = "{{ published_at | date: \"YYYY-HH-mm\" }}";
+        System.out.println(System.currentTimeMillis());
+        String templateString = "{{ published_at | date: \"YYYY-MM-dd HH:mm:ss\" }}";
         Configuration configuration = new Configuration(new StringTemplateResourceLoader());
         TemplateResolver builder = new TemplateResolver(configuration);
         Template template = builder.resolve(templateString);
-        template.bind("published_at", "785971906000");
+        template.bind("published_at", "1645789634311");
         System.out.println(template.render());
     }
 

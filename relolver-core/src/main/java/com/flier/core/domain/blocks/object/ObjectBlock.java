@@ -41,10 +41,10 @@ public class ObjectBlock implements Block {
         this.templateContent = RelolverUtil.subMarkToTemplate(template.trim(), leftMark, rightMark);
         List<String> items = Arrays.stream(this.templateContent.split("\\|")).collect(Collectors.toList());
         this.key = items.remove(0).trim();
-        this.piplines = this.bulidPipLines(items);
+        this.piplines = this.buildPipLines(items);
     }
 
-    private List<PiplineBlock> bulidPipLines(List<String> items) {
+    private List<PiplineBlock> buildPipLines(List<String> items) {
         return items.stream().map(item -> new PiplineBlock(item, context)).collect(Collectors.toList());
     }
 

@@ -20,4 +20,13 @@ public class SplitMethodTest {
         Template template = builder.resolve(templateString);
         System.out.println(template.render());
     }
+
+    @Test
+    public void test2() {
+        String templateString = "{% assign beatles = \"J\" | fill_blank: 3 %}{{beatles}}";
+        Configuration configuration = new Configuration(new StringTemplateResourceLoader());
+        TemplateResolver builder = new TemplateResolver(configuration);
+        Template template = builder.resolve(templateString);
+        System.out.println(template.render());
+    }
 }

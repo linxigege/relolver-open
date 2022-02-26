@@ -133,7 +133,10 @@ public class TemplateTest {
             users.add(user);
         }
         object.put("users", users);
-        Map<String, String> map = new HashMap<>(2);
+        Map<String, String> map = new HashMap<String, String>(2) {{
+            put("esp", "99");
+            put("sad", "666");
+        }};
         object.put("object", map);
         String render = RelolverControl.render(resource, templateName, suffix, JSON.toJSONString(object));
         System.out.println(render);

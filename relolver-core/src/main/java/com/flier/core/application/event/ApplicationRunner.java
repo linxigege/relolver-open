@@ -1,4 +1,4 @@
-//package com.flier.relolver.application.event;
+package com.flier.core.application.event;//package com.flier.relolver.application.event;
 //
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;

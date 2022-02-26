@@ -61,7 +61,7 @@ public class IFProcessBlock extends ProcessBlock {
     public Result render() {
         StringBuilder result = new StringBuilder();
         if (super.flag) {
-            super.childsResult(this.valid()).stream().map(item -> item.getResult()).forEach(child -> {
+            super.childResult(this.valid()).stream().map(item -> item.getResult()).forEach(child -> {
                 result.append(child.toString());
             });
         }

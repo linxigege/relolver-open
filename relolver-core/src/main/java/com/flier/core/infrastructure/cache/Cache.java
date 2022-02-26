@@ -16,8 +16,11 @@ public class Cache {
     private final ConcurrentHashMap<String, Object> cache = new ConcurrentHashMap<>();
     private final ConcurrentHashMap<String, Long> cacheTimeout = new ConcurrentHashMap<>();
 
+    /**
+     * 临时关闭缓存
+     */
     public Cache() {
-        this.startCleaner();
+//        this.startCleaner();
     }
 
     public void cache(String key, Object value) {

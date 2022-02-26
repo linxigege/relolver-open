@@ -3,9 +3,9 @@
 
 
 对象迭代：
-{%- for key in object.keySet() -%}
+{%- kvfor key,value in object -%}
 {{key}}={{value}}
-{%- endfor -%}
+{%- endkvfor -%}
 
 
 加上判断语句：

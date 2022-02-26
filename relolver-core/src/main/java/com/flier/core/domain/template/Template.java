@@ -46,8 +46,8 @@ public class Template implements RelolverTemplate {
         this.header = new Header(headerContent);
         // 从模板内容中解析出多个 语法块
         List<Block> blocks = this.templateParser.parse(content);
-        // 处理 控制流语句中的标记
-        blocks = handlerProcessTag(blocks);
+        // 是否处理文本域 换行替换为空
+//        blocks = handlerProcessTag(blocks);
         // 追加到结果块中
         this.resultBlocks = getResultBlocks(blocks);
     }
@@ -142,6 +142,12 @@ public class Template implements RelolverTemplate {
         return resultBlocks;
     }
 
+    /**
+     * 是否处理文本域 换行替换为空
+     *
+     * @param blocks
+     * @return
+     */
     private List<Block> handlerProcessTag(List<Block> blocks) {
         for (int i = 0; i < blocks.size() - 2; i++) {
             Block before = blocks.get(i);
@@ -152,15 +158,16 @@ public class Template implements RelolverTemplate {
                 if (currentProcess.isDeleteBlank()) {
                     if (before instanceof TextBlock) {
                         TextBlock beforeTextBlock = (TextBlock) before;
-                        if (beforeTextBlock.textIs(Constants.LINE)) {
-                            beforeTextBlock.skip();
-                        }
+                        // 注释解决下linux下 换行被去掉问题
+//                        if (beforeTextBlock.textIs(Constants.LINE)) {
+//                            beforeTextBlock.skip();
+//                        }
                     }
                     if (after instanceof TextBlock) {
                         TextBlock afterTextBlock = (TextBlock) after;
-                        if (afterTextBlock.textIs(Constants.LINE)) {
-                            afterTextBlock.skip();
-                        }
+//                        if (afterTextBlock.textIs(Constants.LINE)) {
+//                            afterTextBlock.skip();
+//                        }
                     }
                 }
             }
@@ -213,11 +220,9 @@ public class Template implements RelolverTemplate {
         }
 
         RelolverTemplate template() {
-            Map<String, String> page = new HashMap<String, String>(params);
+            Map<String, String> page = new HashMap<>(params);
             page.remove(Constants.LAYOUT);
-            page.entrySet().stream().forEach(e -> {
-                bind(e.getKey(), e.getValue());
-            });
+            page.entrySet().stream().forEach(e -> bind(e.getKey(), e.getValue()));
             String layoutTemplateName = this.params.get(Constants.LAYOUT).trim();
             RelolverTemplate layoutTemplate = layoutResolver.resolve(layoutTemplateName.trim());
             return layoutTemplate;

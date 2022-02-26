@@ -131,6 +131,10 @@ public class RelolverUtil {
             return new ForProcessBlock(template, context);
         } else if (command.startsWith(Constants.TAG_FOR_END)) {
             return new EndProcessBlock(template, context).setTag(Constants.TAG_FOR_END);
+        } else if (command.startsWith(Constants.TAG_KV_FOR)) {
+            return new KvForProcessBlock(template, context);
+        } else if (command.startsWith(Constants.TAG_KV_FOR_END)) {
+            return new EndProcessBlock(template, context).setTag(Constants.TAG_KV_FOR_END);
         } else if (command.startsWith(Constants.TAG_IF)) {
             return new IFProcessBlock(template, context);
         } else if (command.startsWith(Constants.TAG_ELSE_IF)) {

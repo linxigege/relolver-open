@@ -8,7 +8,7 @@ import com.flier.core.infrastructure.method.Method;
  * @author admin
  * @date 2022/02/18
  */
-public class UpcaseMethod implements Method<String> {
+public class UpCaseMethod implements Method<String> {
     @Override
     public String doFormat(String content, Object[] args) {
         return content.toUpperCase();

@@ -11,6 +11,11 @@ public class Bug {
     /**
      * bug:
      * 1. 模板添加多了特殊符号导致部分变量解析不出来   -------------------------------
-     * 2. 在对象.属性情况下 for循环中嵌套if的 会使if解释逻辑失效
+     * 2. for循环中嵌套if的话会是if解释逻辑失效
      */
+
+    public static void main(String[] args) {
+        Integer val16 = Integer.valueOf("0xf40000", 16);
+        System.out.println(val16);
+    }
 }

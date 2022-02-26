@@ -10,7 +10,6 @@ import com.flier.core.infrastructure.utils.Context;
  * @author user
  */
 public class EndProcessBlock extends ProcessBlock {
-    private String endMark;
 
     public EndProcessBlock(String endMark, Context context) {
         super(endMark, context);

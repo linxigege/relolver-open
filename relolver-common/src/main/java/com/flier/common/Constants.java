@@ -16,6 +16,8 @@ public class Constants {
     public static final String TAG_INCLUDE = "include";
     public static final String TAG_FOR = "for";
     public static final String TAG_FOR_END = "endfor";
+    public static final String TAG_KV_FOR = "kvfor";
+    public static final String TAG_KV_FOR_END = "endkvfor";
     public static final String TAG_IF = "if";
     public static final String TAG_IF_END = "endif";
     public static final String TAG_ELSE_IF = "elsif";
@@ -69,6 +71,9 @@ public class Constants {
     public static String RELATIVE_URL = "relative_url";
     public static String TRIM = "trim";
     public static String RIGHT_CUT = "right_cut";
+    public static String FILL_BLANK = "fill_blank";
+    public static String ADD = "add";
+    public static String OX_ADD = "ox_add";
 
     /**
      * 换行符
